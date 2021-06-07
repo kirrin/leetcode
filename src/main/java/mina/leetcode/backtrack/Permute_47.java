@@ -38,6 +38,7 @@ public class Permute_47 {
             // 如何剪枝，剪去重复的分支
             // !visit[i-1] 和 visit[i-1] 结果一样，
             // 为什么要加这个呢? 试了不加的话track填不满，只有加了，才能填满
+            // i和i-1相等时，如果i-1已经使用过，那可以继续，如果i-1未被使用过，那么继续用i就会产生重复分支，需要被剪枝
             if (visit[i] || i > 0 && nums[i] == nums[i - 1] && !visit[i - 1]) {
                 continue;
             }
